@@ -1,0 +1,9 @@
+mkdir BackEnd
+cd BackEnd
+npm init
+npm install express --save
+npm install xlsx
+mkdir FrontEnd
+cd FrontEnd
+npx create-react-app frontendreact
+npm i axios
