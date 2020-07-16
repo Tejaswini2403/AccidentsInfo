@@ -1,0 +1,22 @@
+.Bod
+{
+    background: linear-gradient(to right bottom,#eacda3,#d6ae7b);
+    display: flex;
+    flex-wrap: wrap;
+    height:100%;
+}
+
+.c1 {
+    flex-grow: 2;
+    flex-basis: 50%;
+    text-align: center;
+    border:20px solid rgb(247, 243, 243);
+    background-color: white;
+  }
+  .c2 {
+    flex-grow: 2;
+    flex-basis: 50%;
+    text-align: center;
+    border:20px solid rgb(247, 243, 243);
+    background-color: white;
+  }

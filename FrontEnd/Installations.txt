@@ -7,3 +7,15 @@ mkdir FrontEnd
 cd FrontEnd
 npx create-react-app frontendreact
 npm i axios
+npm install react-bootstrap bootstrap
+
+
+**No need now**
+npm install jspdf
+npm install --save html2canvas
+npm install react-native-html-to-pdf --save
+npm i react-router-dom
+npm install @reduxjs/toolkit
+npm install redux
+npm install react-redux
+npm i react-hook-form

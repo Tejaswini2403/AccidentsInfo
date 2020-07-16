@@ -9,7 +9,7 @@ app.get('/getData', (req,res) => {
     var workbook = XLSX.readFile('./AccData.xlsx');
     var sheet_name_list = workbook.SheetNames;
     var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
-    console.log(xlData);
+    //console.log(xlData);
     res.send(xlData);
 })
 
