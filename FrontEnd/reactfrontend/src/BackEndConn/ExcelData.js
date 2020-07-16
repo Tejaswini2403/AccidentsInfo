@@ -1,8 +1,6 @@
 import React,{Component} from 'react'; 
 import "./ExcelData.css";
 import axios from "axios";
-import jsPDF from "jspdf"; 
-
 
 export default class ExcelData extends Component {
     constructor() {
@@ -15,42 +13,14 @@ export default class ExcelData extends Component {
     componentWillMount() {
         axios.get("/getData").then(res => {
             this.setState({fetchedData:res.data})
-            //console.log(this.state.fetchedData[0]);
+            //console.log(this.state.fetchedData);
         });
         
         setTimeout(() => {
             this.setState({jsonObj:this.state.fetchedData[7]})
-            //console.log(this.state.jsonObj);
+            console.log(this.state.jsonObj);
             //console.log(this.state.fetchedData[0]['Month']);
-          }, 1000);
-    }
-
-    jsPdfGenerator = () => {
-        var doc=new jsPDF('p','pt');
-        doc.text(20,20,"PDF generated");
-        doc.save("gen.pdf");
-    }
-
-    printDocument() {
-        /*var doc = new jsPDF()
-        doc.fromHTML(document.querySelector("#data"), 1, 1)
-        doc.save("name.pdf")*/
-        var doc = new jsPDF();          
-        var elementHandler = {
-        '#data': function (element, renderer) {
-            return true;
-        }
-        };
-        var source = window.document.getElementsByTagName("body")[0];
-        doc.fromHTML(
-            source,
-            15,
-            15,
-            {
-            'width': 180,'elementHandlers': elementHandler
-            });
-
-        doc.output("dataurlnewwindow");
+          }, 1500);
     }
 
     render() {
@@ -59,33 +29,37 @@ export default class ExcelData extends Component {
             <div>
                 <h1>Hello</h1>
 
-                <p>{this.state.jsonObj.AccidentNo}</p>
-                <p>{this.state.jsonObj.Month}</p>
-                <p>{this.state.jsonObj.AccidentCause}</p>
-                
-
                 <hr/>
-
-                 <div className="posts" id="data">
-                     { this.state.fetchedData.map(post => {
-                         return(
-                         <div key={post.AccidentNo}>
-                            <h1>Date is :{ post.Date }</h1>
-                            <p>{post.Lattitude} {post.Longitude}</p>
-                            <h3>{ post.AccidentCause} </h3>
-                         </div>
-                         ) 
-                     }) }
-                 </div>
-                 
-                <div className="mb5">
-                    <button onClick={this.printDocument}>Print</button>
-                </div>
-                 <div id="capture" className="mt4">
-                    <div>Note: Here the dimensions of div are same as A4</div> 
-                    <div>You Can add any component here</div>
-                </div>
-
+                <p>{this.state.jsonObj.AccidentNo}</p>
+                <p>{this.state.jsonObj.Year}</p>
+                <p>{this.state.jsonObj.Month}</p>
+                <p>{this.state.jsonObj.Date}</p>
+                <p>{this.state.jsonObj.CrimeNo}</p>
+                <p>{this.state.jsonObj.Section}</p>
+                <p>{this.state.jsonObj.InvestigationOfficer}</p>
+                <p>{this.state.jsonObj.Location}</p>
+                <p>{this.state.jsonObj.Lattitude}</p>
+                <p>{this.state.jsonObj.Longitude}</p>
+                <p>{this.state.jsonObj.Time}</p>
+                <p>{this.state.jsonObj.District}</p>
+                <p>{this.state.jsonObj.State}</p>
+                <p>{this.state.jsonObj.RoadName}</p>
+                <p>{this.state.jsonObj.RoadType}</p>
+                <p>{this.state.jsonObj.NoOfLanes}</p>
+                <p>{this.state.jsonObj.SpeedLimit}</p>
+                <p>{this.state.jsonObj.VehicleType}</p>
+                <p>{this.state.jsonObj.RegistrationNo}</p>
+                <p>{this.state.jsonObj.VehicleDamageType}</p>
+                <p>{this.state.jsonObj.DriverName}</p>
+                <p>{this.state.jsonObj.DriverGender}</p>
+                <p>{this.state.jsonObj.DriverAge}</p>
+                <p>{this.state.jsonObj.DriverCondition}</p>
+                <p>{this.state.jsonObj.NoOfPassengers}</p>
+                <p>{this.state.jsonObj.VictimName}</p>
+                <p>{this.state.jsonObj.VictimAge}</p>
+                <p>{this.state.jsonObj.VictimGender}</p>
+                <p>{this.state.jsonObj.AccidentCause}</p>
+                <hr/>
 
                 <h1>Bye</h1>
             </div>
