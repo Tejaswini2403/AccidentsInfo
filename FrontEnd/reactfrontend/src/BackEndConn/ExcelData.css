@@ -1,0 +1,13 @@
+.card-body{
+    line-height:0.75;
+} 
+.ln{
+    line-height:2;
+}
+ .col-z:not(:last-child) {
+    border-right: 1px solid #ccc;
+} 
+
+.ds{
+    line-height:1;
+}

@@ -1,11 +1,8 @@
-mkdir BackEnd
-cd BackEnd
-npm init
+**In BackEnd**
 npm install express --save
 npm install xlsx
-mkdir FrontEnd
-cd FrontEnd
-npx create-react-app frontendreact
+
+**In FrontEnd/reactfrontend
 npm i axios
 npm install react-bootstrap bootstrap
 
@@ -19,3 +16,5 @@ npm install @reduxjs/toolkit
 npm install redux
 npm install react-redux
 npm i react-hook-form
+npm install --save google-maps-react
+npm i react-google-maps react-google-autocomplete react-geocode
