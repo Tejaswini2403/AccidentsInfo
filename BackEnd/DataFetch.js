@@ -6,7 +6,7 @@ app.get('/', (req, res) => res.send('Hello BackEnd World!'));
 
 app.get('/getData', (req,res) => {
     var XLSX = require('xlsx')
-    var workbook = XLSX.readFile('./AccData.xlsx');
+    var workbook = XLSX.readFile('./AccidentsInformationEd.xlsx');
     var sheet_name_list = workbook.SheetNames;
     var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
     //console.log(xlData);
